@@ -1,0 +1,19 @@
+{
+  "name": "red-contrib-plugin-enebular-flow",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "license": "Apache",
+  "dependencies": {
+    "axios": "^1.x.x"
+  },
+  "keywords": [
+    "node-red",
+    "Plugins"
+  ],
+  "node-red": {
+    "plugins": {
+      "enebular-flow": "enebular-flow.html"
+    }
+  }
+}

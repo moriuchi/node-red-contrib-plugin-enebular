@@ -1,0 +1,12 @@
+{
+  "enebular-flow" : {
+    "label" : {
+        "signinBtn": "サインイン",
+        "loginBtn": "ログイン",
+        "canselBtn": "キャンセル",
+        "dialogTitle": "enebular ログイン",
+        "email": "メール",
+        "password": "パスワード"
+    }
+  }
+}
