@@ -1,6 +1,6 @@
 node-red-contrib-plugin-enebular
 ========================
-このモジュールは、<a href="https://www.enebular.com/ja" target="_new">enebular</a> のフローを読み込む <a href="http://nodered.org" target="_new">Node-RED</a> プラグインです。
+このモジュールは、<a href="https://www.enebular.com/ja" target="_new">enebular</a> と連結する <a href="http://nodered.org" target="_new">Node-RED</a> プラグインです。
 
 [![NPM](https://nodei.co/npm/node-red-contrib-plugin-enebular.png?downloads=true)](https://nodei.co/npm/node-red-contrib-plugin-enebular/)
 
@@ -17,16 +17,27 @@ Node-REDをインストールしたルートディレクトリで以下のコマ
 
     npm install node-red-contrib-plugin-enebular
 
-Node-REDインスタンスを再起動すると、サイドバーに enebular flow import が表示されて使用可能になります。
+Node-REDインスタンスを再起動すると、サイドバーに enebular タブが表示されて使用可能になります。
 
 使い方
 -------
 
-1. サイドバーの enebular flow import を表示します。
+1. サイドバーの enebular タブを表示します。
 1. サインインボタンをクリックして enebular にログインします。
-1. 表示されたフローをクリックするとインポートされます。
 
 更新ボタンをクリックするとenebular のフローを再取得します。
+
+### インポート
+
+ログイン後に表示されたフローをクリックするとインポートされます。
+
+### デプロイ
+
+デプロイ アコーディオンを開いて次の項目を入力してデプロイボタンをクリックして enebular にフローを保存します。
+- プロジェクト
+- フロー名
+- 説明
+- デフォルト権限
 
 
 謝辞

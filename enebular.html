@@ -1,0 +1,49 @@
+<!--
+  Copyright 2014 Atsushi Kojo.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/javascript">
+(function() {
+  RED.plugins.registerPlugin("enebular", {
+    type: "enebular-plugin-sidebar",
+    onadd: function() {
+      var plugin = this;
+
+      var sidebarContent = $('<div/>', {id: "enebular-sidebar-content"});
+
+      import("/resources/red-contrib-plugin-enebular/index.js")
+      .then(function(enebularModule) {
+        enebularModule.init(plugin);
+
+        enebularModule.createSidebar().appendTo(sidebarContent);
+        enebularModule.createLoginDialog().appendTo(sidebarContent);
+      });
+
+      RED.sidebar.addTab({
+        id: "enebular-sidebar",
+        name: "enebular",
+        label: "enebular",
+        iconClass: "fa fa-file",
+        content: sidebarContent,
+        action: "enebular:show-enebular-sidebar-tab"
+      });
+
+      RED.actions.add("enebular:show-enebular-sidebar-tab", function(){
+        RED.sidebar.show("enebular-sidebar");
+      });
+    }
+  });
+})();
+</script>

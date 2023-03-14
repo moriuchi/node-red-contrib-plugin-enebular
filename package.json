@@ -9,11 +9,12 @@
   },
   "keywords": [
     "node-red",
-    "Plugins"
+    "Plugins",
+    "enebular"
   ],
   "node-red": {
     "plugins": {
-      "enebular-flow": "enebular-flow.html"
+      "enebular": "enebular.html"
     }
   }
 }

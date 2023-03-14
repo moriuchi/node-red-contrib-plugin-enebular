@@ -3,7 +3,7 @@ node-red-contrib-plugin-enebular
 
 [**Japanese**](./README_ja.md)
 
-This module is a <a href="http://nodered.org" target="_new">Node-RED</a> plugin that imports <a href="https://www.enebular.com/ja" target="_new">enebular</a> flows.
+This module is a <a href="http://nodered.org" target="_new">Node-RED</a> plugin to be coupled with <a href="https://www.enebular.com/ja" target="_new">enebular</a>.
 
 [![NPM](https://nodei.co/npm/node-red-contrib-plugin-enebular.png?downloads=true)](https://nodei.co/npm/node-red-contrib-plugin-enebular/)
 
@@ -20,17 +20,27 @@ Run the following command in the root directory of your Node-RED install.
 
     npm install node-red-contrib-plugin-enebular
 
-Restart your Node-RED instance, the enebular flow import appears in the sidebar and ready for use.
-
+Restart your Node-RED instance, the enebular tab appears in the sidebar and ready for use.
 
 Usage
 -------
 
-1. View the enebular flow import in the sidebar.
+1. View the enebular tab in the sidebar.
 1. Click the Sign In button to log in to enebular.
-1. Click the displayed flow to import it.
 
 Click the refresh button will reacquire the enebular flow.
+
+### import
+
+Click on the flow displayed after login to import.
+
+### deploy
+
+Open the Deploy accordion, enter the following items and click the Deploy button to save the flow in enebular.
+- Project
+- Flow Name
+- Description
+- Default Role
 
 
 Acknowledgements

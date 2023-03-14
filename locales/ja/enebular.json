@@ -1,0 +1,21 @@
+{
+  "enebular" : {
+    "label" : {
+        "signinBtn": "サインイン",
+        "loginBtn": "ログイン",
+        "canselBtn": "キャンセル",
+        "dialogTitle": "enebular ログイン",
+        "email": "メール",
+        "password": "パスワード",
+        "exportHeader": "デプロイ",
+        "project": "プロジェクト",
+        "flowName": "フロー名",
+        "description": "説明",
+        "defaultRole": "デフォルト権限",
+        "exportBtn": "デプロイ"
+    },
+    "message" : {
+      "deploySuccessful": "デプロイが成功しました。"
+    }
+  }
+}

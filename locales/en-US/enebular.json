@@ -1,0 +1,21 @@
+{
+  "enebular" : {
+    "label" : {
+        "signinBtn": "Sign in",
+        "loginBtn": "Log in",
+        "canselBtn": "Cansel",
+        "dialogTitle": "enebular Login",
+        "email": "Email",
+        "password": "Password",
+        "exportHeader": "Deploy",
+        "project": "Project",
+        "flowName": "Flow Name",
+        "description": "Description",
+        "defaultRole": "Default Role",
+        "exportBtn": "Deploy"
+    },
+    "message" : {
+      "deploySuccessful": "Successfully Deployed."
+    }
+  }
+}
