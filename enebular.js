@@ -117,7 +117,7 @@ module.exports = function(RED) {
 		const credential = {};
 		param.credentials.forEach(cred => {
 			const config = RED.nodes.getCredentials(cred.configId);
-			if(config) credential[param.configId] = config;
+			if(config) credential[cred.configId] = config;
 		});
 
 		const reqParam = [

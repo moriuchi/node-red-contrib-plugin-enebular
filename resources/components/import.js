@@ -1,4 +1,4 @@
-import { Plugin, sendAjaxRequest } from "../utils.js";
+import { Plugin, sendAjaxRequest, notifyMessage } from "../utils.js";
 
 function createImportPalette() {
   var importPalette = $('<div/>', {id: "red-ui-enebular-import", class: "red-ui-palette-category"});
@@ -18,15 +18,24 @@ function createImportPalette() {
         projectId: item.parent.id
       };
       sendAjaxRequest(url, "POST", params, function(result) {
-        RED.view.importNodes(result.flowData);
+        try {
+          RED.view.importNodes(result.flowData);
 
-        var credData = result.credData;
-        RED.nodes.eachConfig(function(config) {
-          if (credData.hasOwnProperty(config.id)) {
-            config["credentials"] = credData[config.id];
-            RED.nodes.add(config);
-          }
-        });
+          var credData = result.credData;
+          RED.nodes.eachConfig(function(config) {
+            if (credData.hasOwnProperty(config.id)) {
+              config["credentials"] = credData[config.id];
+              RED.nodes.add(config);
+            }
+          });
+
+          $("#node-input-enebular-project").val(result.projectId);
+          $("#node-input-enebular-flowId").val(result.id);
+          $("#node-input-enebular-flowName").val(result.title).attr("readonly", true);
+        }catch(e){
+          notifyMessage(e.toString(), "error");
+        }
+
       });
     }
   });

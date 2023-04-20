@@ -28,10 +28,19 @@ function createExportPalette() {
   var div4 = $('<div/>', {class: "form-row", style: "margin: 5px"}).appendTo(exportBody);
 
   $('<label/>').text(Plugin._("enebular.label.project")).appendTo(div1);
-  $('<select/>', {id: "node-input-enebular-project"}).appendTo(div1);
+  var project = $('<select/>', {id: "node-input-enebular-project"}).appendTo(div1);
 
   $('<label/>').text(Plugin._("enebular.label.flowName")).appendTo(div2);
-  $('<input/>', {type: "text", id: "node-input-enebular-flowName"}).appendTo(div2);
+  var nameRow = $('<div/>', {style: "width: 90%; display: inline-flex"}).appendTo(div2);
+  var flowName = $('<input/>', {type: "text", id: "node-input-enebular-flowName"}).appendTo(nameRow);
+  $('<button/>', {type: "button", class: "red-ui-button", style: "margin-left: 5px"})
+      .append('<i class="fa fa-plus" />')
+      .appendTo(nameRow)
+      .on("click", function() {
+        flowName.removeAttr("readonly");
+        flowId.val("");
+      });
+  var flowId = $('<input/>', {type: "hidden", id: "node-input-enebular-flowId"}).appendTo(div2);
 
   $('<label/>').text(Plugin._("enebular.label.description")).appendTo(div3);
   $('<textarea/>', {id: "node-input-enebular-description"}).appendTo(div3);
@@ -52,7 +61,15 @@ function createExportPalette() {
           .text(Plugin._("enebular.label.exportBtn"))
           .appendTo(btnSet)
           .on("click", function() {
-            executeFlowCreate();
+            if (flowId.val()) {
+              const param = {
+                projectId: project.val(),
+                id: flowId.val()
+              };
+              executeFlowCredentialsUpdate(param);
+            } else {
+              executeFlowCreate();
+            }
           });
 
   return exportPalette;
@@ -62,6 +79,7 @@ function createProjectList(flows) {
   var projectField = $("#node-input-enebular-project");
   var projects = [];
 
+  projectField.children("option").remove();
   flows.forEach(function(data) {
     var pIndex = projects.indexOf(data.projectId);
 
@@ -73,7 +91,7 @@ function createProjectList(flows) {
 }
 
 function createScreenShot(e) {
-  return (
+  const screenShot = (
     (e = document.querySelector("#enebular-screenshot")) && e.remove(),
     (e = document.querySelector("#red-ui-workspace-chart").cloneNode(!0)).setAttribute("id", "enebular-screenshot"),
     e.setAttribute("style", "display: none"),
@@ -91,6 +109,9 @@ function createScreenShot(e) {
     d3.select("#enebular-screenshot").selectAll("g.red-ui-flow-node-error").remove(),
     document.querySelector("#enebular-screenshot").innerHTML
     );
+    document.querySelector("#enebular-screenshot").remove();
+
+    return screenShot;
 }
 
 const executeFlowCreate = () => {
