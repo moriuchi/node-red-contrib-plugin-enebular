@@ -20,6 +20,10 @@ Run the following command in the root directory of your Node-RED install.
 
     npm install node-red-contrib-plugin-enebular
 
+Go to the directory of the installed plugin and run the following command.
+
+    npm run build
+
 Restart your Node-RED instance, the enebular tab appears in the sidebar and ready for use.
 
 Usage

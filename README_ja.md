@@ -17,6 +17,10 @@ Node-REDをインストールしたルートディレクトリで以下のコマ
 
     npm install node-red-contrib-plugin-enebular
 
+インストールしたプラグインのディレクトリに移動して以下のコマンドを実行します。
+
+    npm run build
+
 Node-REDインスタンスを再起動すると、サイドバーに enebular タブが表示されて使用可能になります。
 
 使い方

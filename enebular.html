@@ -14,22 +14,18 @@
   limitations under the License.
 -->
 
+<script src="resources/red-contrib-plugin-enebular/enebularPlugin.js" ></script>
 <script type="text/javascript">
 (function() {
   RED.plugins.registerPlugin("enebular", {
     type: "enebular-plugin-sidebar",
     onadd: function() {
       var plugin = this;
+      enebularPlugin.init(plugin);
 
       var sidebarContent = $('<div/>', {id: "enebular-sidebar-content"});
-
-      import("/resources/red-contrib-plugin-enebular/index.js")
-      .then(function(enebularModule) {
-        enebularModule.init(plugin);
-
-        enebularModule.createSidebar().appendTo(sidebarContent);
-        enebularModule.createLoginDialog().appendTo(sidebarContent);
-      });
+      enebularPlugin.createSidebar().appendTo(sidebarContent);
+      enebularPlugin.createLoginDialog().appendTo(sidebarContent);
 
       RED.sidebar.addTab({
         id: "enebular-sidebar",
