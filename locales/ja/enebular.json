@@ -4,6 +4,7 @@
         "signinBtn": "サインイン",
         "loginBtn": "ログイン",
         "canselBtn": "キャンセル",
+        "importBtn": "読み込み",
         "dialogTitle": "enebular ログイン",
         "email": "メール",
         "password": "パスワード",
@@ -15,7 +16,8 @@
         "exportBtn": "デプロイ"
     },
     "message" : {
-      "deploySuccessful": "デプロイが成功しました。"
+      "deploySuccessful": "デプロイが成功しました。",
+      "importConfirm": "__flowname__ フローを読み込みます。"
     }
   }
 }

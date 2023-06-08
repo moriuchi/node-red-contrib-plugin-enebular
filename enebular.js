@@ -22,7 +22,7 @@ module.exports = function(RED) {
 		const flowObj = JSON.parse(param.flows);
 
 		const credentials = {};
-		param.credentials.forEach(configId => {
+		param.credentials?.forEach(configId => {
 			const config = RED.nodes.getCredentials(configId);
 
 			if(config) {

@@ -4,6 +4,7 @@
         "signinBtn": "Sign in",
         "loginBtn": "Log in",
         "canselBtn": "Cansel",
+        "importBtn": "Import",
         "dialogTitle": "enebular Login",
         "email": "Email",
         "password": "Password",
@@ -15,7 +16,8 @@
         "exportBtn": "Deploy"
     },
     "message" : {
-      "deploySuccessful": "Successfully Deployed."
+      "deploySuccessful": "Successfully Deployed.",
+      "importConfirm": "Import __flowname__ flow."
     }
   }
 }
