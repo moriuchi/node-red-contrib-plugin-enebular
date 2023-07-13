@@ -5,7 +5,11 @@
         "loginBtn": "Log in",
         "canselBtn": "Cansel",
         "importBtn": "Import",
+        "importCopyBtn": "Import copy",
+        "viewNodesBtn": "View nodes",
+        "importSelectedBtn": "Import selected",
         "dialogTitle": "enebular Login",
+        "conflictDialogTitle": "Import enebular flows",
         "email": "Email",
         "password": "Password",
         "exportHeader": "Deploy",
@@ -13,11 +17,17 @@
         "flowName": "Flow Name",
         "description": "Description",
         "defaultRole": "Default Role",
-        "exportBtn": "Deploy"
+        "exportBtn": "Deploy",
+        "flows": "Flows",
+        "subflows": "Subflows",
+        "displayConfig": "Configuration nodes",
+        "replace": "replace"
     },
     "message" : {
       "deploySuccessful": "Successfully Deployed.",
-      "importConfirm": "Import __flowname__ flow."
+      "importConfirm": "Import __flowname__ flow.",
+      "importConflict": "There is a duplicate flow in the workspace that overlaps the flow you are importing.",
+      "importConflictsChoice": "Select the node to import. You may also choose to replace an existing node or import a copy."
     }
   }
 }

@@ -27,6 +27,27 @@
       enebularPlugin.createSidebar().appendTo(sidebarContent);
       enebularPlugin.createLoginDialog().appendTo(sidebarContent);
 
+      $('<div id="red-ui-enebular-dialog" class="hide"><form class="dialog-form form-horizontal"></form></div>')
+        .appendTo(sidebarContent)
+        .dialog({
+          modal: true,
+          autoOpen: false,
+          resizable: false,
+          width: 300,
+          classes: {
+            "ui-dialog": "red-ui-editor-dialog",
+            "ui-dialog-titlebar-close": "hide",
+            "ui-widget-overlay": "red-ui-editor-dialog"
+          },
+          buttons: [],
+          open: function() {
+            RED.keyboard.disable();
+          },
+          close: function() {
+            RED.keyboard.enable();
+          }
+        });
+
       RED.sidebar.addTab({
         id: "enebular-sidebar",
         name: "enebular",

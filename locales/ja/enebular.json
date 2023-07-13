@@ -5,7 +5,11 @@
         "loginBtn": "ログイン",
         "canselBtn": "キャンセル",
         "importBtn": "読み込み",
+        "importCopyBtn": "コピーを読み込み",
+        "viewNodesBtn": "ノードを参照",
+        "importSelectedBtn": "選択したノードを読み込み",
         "dialogTitle": "enebular ログイン",
+        "conflictDialogTitle": "enebular フローを読み込み",
         "email": "メール",
         "password": "パスワード",
         "exportHeader": "デプロイ",
@@ -13,11 +17,17 @@
         "flowName": "フロー名",
         "description": "説明",
         "defaultRole": "デフォルト権限",
-        "exportBtn": "デプロイ"
+        "exportBtn": "デプロイ",
+        "flows": "フロー",
+        "subflows": "サブフロー",
+        "displayConfig": "設定ノード",
+        "replace": "置換"
     },
     "message" : {
       "deploySuccessful": "デプロイが成功しました。",
-      "importConfirm": "__flowname__ フローを読み込みます。"
+      "importConfirm": "__flowname__ フローを読み込みます。",
+      "importConflict": "読み込もうとしているフローと重複するフローがワークスペース内に存在しています。",
+      "importConflictsChoice": "読み込むノードを選択してください。また既存のノードを置き換えるか、コピーを読み込むかも選択してください。"
     }
   }
 }
